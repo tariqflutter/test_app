@@ -9,20 +9,20 @@ class HelloApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HelloScreen(),
     );
   }
 }
 
 class HelloScreen extends StatefulWidget {
-  @override
   _HelloScreenState createState() => _HelloScreenState();
 }
 
 class _HelloScreenState extends State<HelloScreen> {
   Color _backgroundColor = Colors.white;
   Color _textColor = Colors.black;
-  List<String> _emojis = [
+  final List<String> _emojis = [
     '👋',
     '🌞',
     '😃',
@@ -65,9 +65,9 @@ class _HelloScreenState extends State<HelloScreen> {
               children: [
                 Text(
                   _currentEmoji,
-                  style: TextStyle(fontSize: 40),
+                  style: const TextStyle(fontSize: 40),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
                   'Hello there',
                   style: TextStyle(
